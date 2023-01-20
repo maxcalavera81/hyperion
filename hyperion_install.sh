@@ -70,7 +70,7 @@ main() {
   fi
 
   # Install ALL THE THINGS!
-  update_armbian
+#  update_armbian
   public_key_from_hyperion
   hyperion_project_as_source_of_hyperion
   update_the_package_install_hyperion
