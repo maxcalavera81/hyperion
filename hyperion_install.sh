@@ -37,7 +37,6 @@ hyperion_project_as_source_of_hyperion() {
     echo ""
     echo "deb [signed-by=/usr/share/keyrings/hyperion.pub.gpg] https://apt.hyperion-project.org/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hyperion.list
 }
-
 # ------------------------------------------------------------------------------
 # Repair apparmor and cgroups
 # ------------------------------------------------------------------------------
