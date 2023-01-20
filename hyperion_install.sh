@@ -44,7 +44,7 @@ update_the_package_install_hyperion() {
     echo ""
     echo "A instalar o Hyperion"
     echo ""
-    sudo apt-get update && sudo apt-get install hyperion  || y
+    sudo apt-get update && sudo apt-get install hyperion  || :y
 }
 
 # ------------------------------------------------------------------------------
