@@ -19,7 +19,7 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
-# Repair apparmor and cgroups
+# public key from Hyperion
 # ------------------------------------------------------------------------------
 public_key_from_hyperion() {
     echo ""
@@ -29,7 +29,7 @@ public_key_from_hyperion() {
 }
 
 # ------------------------------------------------------------------------------
-# Repair apparmor and cgroups
+# Hyperion-Project as source of Hyperion
 # ------------------------------------------------------------------------------
 hyperion_project_as_source_of_hyperion() {
     echo ""
@@ -38,7 +38,7 @@ hyperion_project_as_source_of_hyperion() {
     echo "deb [signed-by=/usr/share/keyrings/hyperion.pub.gpg] https://apt.hyperion-project.org/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hyperion.list
 }
 # ------------------------------------------------------------------------------
-# Repair apparmor and cgroups
+# update the package list and install Hyperion
 # ------------------------------------------------------------------------------
 update_the_package_install_hyperion() {
     echo ""
