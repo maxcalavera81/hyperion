@@ -21,16 +21,32 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # ------------------------------------------------------------------------------
 # Repair apparmor and cgroups
 # ------------------------------------------------------------------------------
-install_hyperion() {
+pupublic_key_from_yperion() {
     echo ""
-    echo "A instalar Hyperion"
+    echo ""
     echo ""
     wget -qO- https://apt.hyperion-project.org/hyperion.pub.key | sudo gpg --dearmor -o /usr/share/keyrings/hyperion.pub.gpg
-    echo "deb [signed-by=/usr/share/keyrings/hyperion.pub.gpg] https://apt.hyperion-project.org/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hyperion.list
-    sudo apt-get update && sudo apt-get install hyperion
 }
 
+# ------------------------------------------------------------------------------
+# Repair apparmor and cgroups
+# ------------------------------------------------------------------------------
+hyperion_project_as_source_of_hyperion() {
+    echo ""
+    echo ""
+    echo ""
+    echo "deb [signed-by=/usr/share/keyrings/hyperion.pub.gpg] https://apt.hyperion-project.org/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hyperion.list
+}
 
+# ------------------------------------------------------------------------------
+# Repair apparmor and cgroups
+# ------------------------------------------------------------------------------
+update_the_package_install_hyperion() {
+    echo ""
+    echo "A instalar o Hyperion"
+    echo ""
+    sudo apt-get update && sudo apt-get install hyperion
+}
 
 # ------------------------------------------------------------------------------
 # Armbian update
@@ -56,7 +72,9 @@ main() {
 
   # Install ALL THE THINGS!
   update_armbian
-  install_hyperion
+  public_key_from_yperion
+  hyperion_project_as_source_of_hyperion
+  update_the_package_install_hyperion
 
   exit 0
 }
