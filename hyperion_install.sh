@@ -21,7 +21,7 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # ------------------------------------------------------------------------------
 # Repair apparmor and cgroups
 # ------------------------------------------------------------------------------
-pupublic_key_from_yperion() {
+public_key_from_hyperion() {
     echo ""
     echo ""
     echo ""
@@ -72,7 +72,7 @@ main() {
 
   # Install ALL THE THINGS!
   update_armbian
-  public_key_from_yperion
+  public_key_from_hyperion
   hyperion_project_as_source_of_hyperion
   update_the_package_install_hyperion
 
